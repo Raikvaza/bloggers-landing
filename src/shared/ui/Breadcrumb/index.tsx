@@ -48,7 +48,7 @@ const BreadcrumbLink = React.forwardRef<
   return (
     <Comp
       ref={ref}
-      className={cn("hover:text-foreground transition-colors", className)}
+      className={cn("transition-colors hover:text-[#6C4DFF]", className)}
       {...props}
     />
   );
@@ -78,7 +78,7 @@ const BreadcrumbSeparator = ({
   <li
     role="presentation"
     aria-hidden="true"
-    className={cn("[&>svg]:size-7", className)}
+    className={cn(className)}
     {...props}
   >
     {children ?? ">"}

@@ -61,14 +61,14 @@ export const SettingsCard = () => {
     >
       {/* Header */}
       <div className="flex w-full items-center justify-between">
-        <Typography variant={"bodyS"} className="font-extrabold">
+        <Typography variant={"bodyS"} className="!font-extrabold">
           9:41
         </Typography>
         <IconLevels className="-mr-6" />
       </div>
       <Typography
         className={cn(
-          "text-center text-[19.46px] font-bold leading-[23.35px]",
+          "text-center !text-[19.46px] !font-bold !leading-[23.35px]",
           (activeIndex == 1 || activeIndex == 2) && "text-white",
         )}
       >
@@ -77,14 +77,14 @@ export const SettingsCard = () => {
       <div className="relative mb-10 mt-4 grow">
         <motion.div
           className="absolute right-1 top-11 z-50 h-[42px] min-w-[42px]"
-          initial={{ opacity: 0, scale: 0.8 }} // Initial state
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{
             opacity: 1,
             scale: 1,
-            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px", // Radius for index 1
-            y: activeIndex === 1 || activeIndex === 2 ? 90 : 10,
+            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px",
+            y: activeIndex === 1 || activeIndex === 2 ? 100 : 10,
           }}
-          transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition between states
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           {activeIndex == 0 && (
             <Image src={"/tmp/insta_rotated.png"} fill alt="insta" />
@@ -93,7 +93,7 @@ export const SettingsCard = () => {
             <div className="z-50 rounded-xl rounded-bl-none bg-white px-[6px] py-[6.3px]">
               <Typography
                 variant={"bodyM"}
-                className="p-0 text-center text-[14.19px] font-extrabold leading-[19.87px] text-bg-accent-active"
+                className="p-0 text-center !text-[14.19px] !font-extrabold !leading-[19.87px] text-bg-accent-active"
               >
                 Фильтры
               </Typography>
@@ -103,7 +103,7 @@ export const SettingsCard = () => {
             <div className="z-50 rounded-xl rounded-bl-none bg-white px-[6px] py-[6.3px]">
               <Typography
                 variant={"bodyM"}
-                className="text-bg-primary-inverse p-0 text-center text-[14.19px] font-extrabold leading-[19.87px]"
+                className="p-0 text-center !text-[14.19px] !font-extrabold !leading-[19.87px] text-bg-primary-inverse"
               >
                 Чат
               </Typography>
@@ -111,22 +111,22 @@ export const SettingsCard = () => {
           )}
         </motion.div>
         <motion.div
-          className="absolute left-1 top-0 z-50 h-[42px] min-w-[42px]"
-          initial={{ opacity: 0, scale: 0.8 }} // Initial state
+          className="absolute left-3 top-0 z-50 h-[42px] min-w-[42px]"
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{
             opacity: 1,
             scale: 1,
-            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px", // Radius for index 1
-            x: activeIndex === 0 || activeIndex === 1 ? -20 : 160,
-            y: activeIndex === 0 ? 70 : activeIndex === 1 ? 40 : 50,
+            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px",
+            x: activeIndex === 0 || activeIndex === 1 ? -20 : 150,
+            y: activeIndex === 0 ? 70 : activeIndex === 1 ? 30 : 50,
           }}
-          transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition between states
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           {activeIndex == 0 && (
             <div className="z-50 rounded-xl rounded-br-none bg-white px-[6px] py-[6.3px]">
               <Typography
                 variant={"bodyM"}
-                className="text-bg-primary-inverse p-0 text-center text-[14.19px] font-extrabold leading-[19.87px]"
+                className="p-0 text-center !text-[14.19px] !font-extrabold !leading-[19.87px] text-bg-primary-inverse"
               >
                 Проекты
               </Typography>
@@ -136,7 +136,7 @@ export const SettingsCard = () => {
             <div className="z-50 rounded-xl rounded-br-none bg-white px-[6px] py-[6.3px]">
               <Typography
                 variant={"bodyM"}
-                className="p-0 text-center text-[14.19px] font-extrabold leading-[19.87px] text-bg-accent-active"
+                className="p-0 text-center !text-[14.19px] !font-extrabold !leading-[19.87px] text-bg-accent-active"
               >
                 Настройки
               </Typography>
@@ -146,7 +146,7 @@ export const SettingsCard = () => {
             <div className="z-50 rounded-xl rounded-bl-none bg-white px-[6px] py-[6.3px]">
               <Typography
                 variant={"bodyM"}
-                className="text-bg-primary-inverse p-0 text-center text-[14.19px] font-extrabold leading-[19.87px]"
+                className="p-0 text-center !text-[14.19px] !font-extrabold !leading-[19.87px] text-bg-primary-inverse"
               >
                 Аналитика
               </Typography>
@@ -155,15 +155,15 @@ export const SettingsCard = () => {
         </motion.div>
         <motion.div
           className="absolute left-0 top-0 z-50 h-[42px] w-[42px]"
-          initial={{ opacity: 0, scale: 0.8 }} // Initial state
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{
             opacity: 1,
             scale: 1,
-            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px", // Radius for index 1
+            borderRadius: activeIndex === 1 ? "20px 0px 10px 10px" : "0px",
             y: activeIndex === 0 ? 160 : activeIndex === 1 ? 0 : 15,
             x: activeIndex === 0 ? 10 : activeIndex === 1 ? 190 : 10,
           }}
-          transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition between states
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           {activeIndex == 0 && (
             <Image src={"/tmp/slider_mini_1.png"} fill alt="slider_image" />
@@ -207,7 +207,7 @@ export const SettingsCard = () => {
       </div>
       <Typography
         className={cn(
-          "mb-2 text-[26px] font-bold leading-[31.13px] text-text-primary",
+          "!mb-2 !text-[26px] !font-bold !leading-[31.13px] text-text-primary",
           (activeIndex == 1 || activeIndex == 2) && "text-white",
         )}
       >
@@ -216,7 +216,7 @@ export const SettingsCard = () => {
       </Typography>
       <Typography
         className={cn(
-          "text-[12.16px] font-normal leading-[17.02px] text-text-secondary",
+          "!text-[12.16px] !font-normal !leading-[17.02px] text-text-secondary",
           (activeIndex == 1 || activeIndex == 2) && "text-white",
         )}
       >
@@ -224,11 +224,11 @@ export const SettingsCard = () => {
         {contentArray[activeIndex].text}
       </Typography>
       <motion.button
-        className="bg-bg-primary-inverse mt-[18px] h-[45.4px] w-[252px] self-center rounded-[26px] px-[6.49px] pb-[15px] pt-[12.97px]"
+        className="mt-[18px] h-[45.4px] w-[252px] self-center rounded-[26px] bg-bg-primary-inverse px-[6.49px] pb-[15px] pt-[12.97px]"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >
-        <Typography className="text-center text-[13px] font-semibold leading-[18.16px] text-bg-primary">
+        <Typography className="!text-center !text-[13px] !font-semibold !leading-[18.16px] text-bg-primary">
           Войти
         </Typography>
       </motion.button>

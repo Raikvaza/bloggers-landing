@@ -1,4 +1,5 @@
 import IconArrow from "@/shared/assets/icons/icon_arrow-r.svg";
+import LogoInBoost from "@/shared/assets/icons/logo_in_boost.svg";
 import {
   Accordion,
   AccordionContent,
@@ -14,46 +15,52 @@ import {
 } from "@/shared/ui/Breadcrumb";
 import { Typography } from "@/shared/ui/Typography";
 
+import { ContentFooter } from "../_sections/ContentFooter";
+
 export default function DocumentationPage() {
   return (
     <div className="relative min-h-screen bg-white p-8 pb-0 text-[#171719]">
-      <div className="mb-[80px] flex w-full items-center justify-center">
-        <div className="flex flex-col items-stretch justify-start gap-2">
-          <Typography className="text-center text-[36px] font-extrabold">
+      <div className="flex w-full flex-col items-center  justify-center md:mb-[80px]">
+        <div className="flex items-stretch justify-start gap-[2px]">
+          <LogoInBoost />
+          <Typography className="!!font-extrabold self-center !text-center !text-[26px]">
             In
-            <span className="text-[36px] font-extrabold text-purple-500">
+            <span className="text-[26px] !font-extrabold text-purple-500">
               BOOST
             </span>
           </Typography>
-          <Typography className="font-medium">
-            Уникальное приложение по поиску сотрудничества
-          </Typography>
         </div>
+        <Typography variant={"bodyM"} className="mb-10 text-center md:mb-0">
+          Уникальное приложение по поиску сотрудничества
+        </Typography>
       </div>
-      <div className="mx-auto flex w-[1120px] justify-start">
+      <div className=" mx-auto flex justify-start md:w-[1120px]">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
-                <Typography variant={"bodyM"} className="text-text-secondary">
+              <BreadcrumbLink asChild href="/">
+                <Typography
+                  variant={"bodyM"}
+                  className="text-[#171719E0] hover:cursor-pointer hover:text-[#6C4DFF]"
+                >
                   Главная
                 </Typography>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator className="h-6 w-6">
+            <BreadcrumbSeparator className="max-h-6 min-h-6 min-w-6 max-w-6">
               <IconArrow />
             </BreadcrumbSeparator>
             <BreadcrumbItem>
-              <Typography variant={"bodyM"} className="text-text-secondary">
+              <Typography variant={"bodyM"} className="text-[#171719E0]">
                 Документация
               </Typography>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="container mx-auto w-[1120px] grow p-4 pt-8">
+      <div className="container mx-auto grow pt-[52px] md:w-[1120px]">
         <div className="flex flex-col gap-3">
-          <Typography variant={"headline2"} className="mb-10">
+          <Typography variant={"headline2"} className="mb-4 md:mb-10">
             Соглашение на обработку персональных данных
           </Typography>
           <Typography variant={"bodyM"}>
@@ -78,10 +85,10 @@ export default function DocumentationPage() {
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   1.
                 </Typography>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   Термины и определения
                 </Typography>
               </AccordionTrigger>
@@ -91,10 +98,10 @@ export default function DocumentationPage() {
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   2.
                 </Typography>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   Сбор и обработка персональных данных
                 </Typography>
               </AccordionTrigger>
@@ -104,10 +111,10 @@ export default function DocumentationPage() {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   3.
                 </Typography>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   Порядок обработки персональных данных
                 </Typography>
               </AccordionTrigger>
@@ -117,10 +124,10 @@ export default function DocumentationPage() {
             </AccordionItem>
             <AccordionItem value="item-4">
               <AccordionTrigger>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   4.
                 </Typography>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   Защита персональных данных
                 </Typography>
               </AccordionTrigger>
@@ -130,10 +137,10 @@ export default function DocumentationPage() {
             </AccordionItem>
             <AccordionItem value="item-5" className="border-b-0">
               <AccordionTrigger>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   5.
                 </Typography>
-                <Typography variant={"caption2"} className="font-extrabold">
+                <Typography variant={"caption2"} className="!font-extrabold">
                   Иные положения
                 </Typography>
               </AccordionTrigger>
@@ -142,6 +149,30 @@ export default function DocumentationPage() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </div>
+      <div className="-mx-8 mt-10 flex w-[100dvw] flex-col items-center justify-center gap-4 pb-10 md:mx-auto md:mt-[131px] md:h-[120px] md:w-[1120px] md:flex-row md:justify-start md:gap-0">
+        <div className="flex w-full items-center justify-between px-8">
+          <Typography className="text-center text-[26px] font-extrabold">
+            In
+            <span className="text-[26px] font-extrabold text-purple-500">
+              BOOST
+            </span>
+          </Typography>
+          <Typography
+            variant={"caption2"}
+            className="whitespace-nowrap md:ml-[163px]"
+          >
+            +7 700 000 99 00
+          </Typography>
+        </div>
+        <Typography variant={"caption2"} className="md:ml-[110px]">
+          inboost@kz
+        </Typography>
+        <div className="flex items-center justify-start gap-4 md:ml-[79px]">
+          <Typography variant={"bodyL"}>Instagram</Typography>
+          <Typography variant={"bodyL"}>Telegram</Typography>
+          <Typography variant={"bodyL"}>Whatsapp</Typography>
         </div>
       </div>
     </div>

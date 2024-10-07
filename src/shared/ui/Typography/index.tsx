@@ -5,16 +5,16 @@ import React from "react";
 const style = cva("", {
   variants: {
     variant: {
-      headline1: "text-[58px] leading-[120%] font-bold",
-      headline2: "text-[36px] leading-[140%] font-bold",
-      headline3: "text-[24px] leading-[120%] font-bold",
+      headline1: "text-[36px] md:text-[58px] leading-[120%] font-bold",
+      headline2: "text-[24px] md:text-[36px] leading-[140%] font-bold",
+      headline3: "text-[20px] md:text-[24px] leading-[120%] font-bold",
 
-      caption1: "text-[24px] leading-[140%] font-semibold",
-      caption2: "text-[20px] leading-[140%] font-extrabold",
+      caption1: "text-[20px] md:text-[24px] leading-[140%] font-semibold",
+      caption2: "text-[18px] md:text-[20px] leading-[140%] font-extrabold",
 
-      bodyL: "text-[20px] leading-[140%] font-normal",
-      bodyM: "text-[16px] leading-[140%] font-normal",
-      bodyS: "text-[13px] leading-[140%] font-normal",
+      bodyL: "text-[16px] md:text-[20px] leading-[140%] font-normal",
+      bodyM: "text-[14px] md:text-[16px] leading-[140%] font-normal",
+      bodyS: "text-[12px] md:text-[13px] leading-[140%] font-normal",
     },
   },
   defaultVariants: {

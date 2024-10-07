@@ -5,6 +5,7 @@ import { cn } from "@/shared/utils/common";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
+import { isMobile } from "react-device-detect";
 
 import ChevronRightButton from "../IconButtonChevronRIght";
 import { RegisterForm } from "../RegisterForm";
@@ -16,18 +17,25 @@ type Props = {
 export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const handleFlip = () => {
+    if (isMobile) {
+      setIsFlipped(!isFlipped);
+    }
+  };
+
   return (
     <motion.div
       className="perspective-1000 relative h-[548px] w-[358px] cursor-pointer rounded-2xl"
-      style={{ perspective: 1000 }} // 3D perspective to make the flip effect smooth
-      onHoverStart={() => setIsFlipped(true)} // Flip on hover
-      onHoverEnd={() => setIsFlipped(false)} // Return to original state when hover ends
+      style={{ perspective: 1000 }}
+      onHoverStart={() => !isMobile && setIsFlipped(true)}
+      onHoverEnd={() => !isMobile && setIsFlipped(false)}
+      onClick={handleFlip}
     >
       <motion.div
         className="relative h-full w-full"
         style={{ transformStyle: "preserve-3d" }}
-        animate={{ rotateY: isFlipped ? 180 : 0 }} // Rotate the container on Y axis
-        transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {/* Front Card */}
         <motion.div
@@ -35,7 +43,7 @@ export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
             "absolute inset-0 flex h-full w-full flex-col items-start justify-between gap-4 rounded-2xl p-8 pb-0",
             color ? color : "bg-lilac-600",
           )}
-          style={{ backfaceVisibility: "hidden" }} // Hide back face
+          style={{ backfaceVisibility: "hidden" }}
         >
           <div className="flex flex-col items-start justify-start gap-2">
             <Typography variant={"headline3"}>Miriam Kautova</Typography>
@@ -57,7 +65,7 @@ export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
         {/* Back Card */}
         <motion.div
           className="absolute inset-0 flex h-full w-full flex-col items-start justify-between gap-4 rounded-2xl bg-bg-primary-inverse p-8"
-          style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }} // Initial rotation of the back side
+          style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
         >
           <div className="flex flex-col items-stretch justify-start gap-6">
             <Typography variant={"headline3"} className="text-white">
