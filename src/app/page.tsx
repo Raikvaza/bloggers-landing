@@ -81,9 +81,23 @@ export default function Home() {
         {/* Repeated sections */}
         <div className="mt-3 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[80px] md:h-[680px] md:flex-row md:gap-[157px]">
           <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
-            <Typography variant={"headline1"}>
-              Мы используем искусственный интеллект
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              Мы используем
             </Typography>
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              искусственный
+            </Typography>
+
+            <Typography variant={"headline1"} className=" whitespace-nowrap">
+              интеллект
+            </Typography>
+
             <Typography variant={"bodyL"}>
               Рекламодатели или блогеры, предложенные в вашем профиле, будут
               подходить вам с точностью до 99%. Вам останется только выбрать
@@ -105,9 +119,26 @@ export default function Home() {
 
         <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
           <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
-            <Typography variant={"headline1"}>
-              Мы способствуем прозрачности сделки{" "}
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              Мы способствуем
             </Typography>
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              прозрачности
+            </Typography>
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            ></Typography>
+            <Typography variant={"headline1"} className=" whitespace-nowrap">
+              сделки
+            </Typography>
+
             <Typography variant={"bodyL"}>
               В нашем приложении вы можете заключить договор между сторонами и
               регулировать сделку с помощью официального документа
@@ -142,9 +173,22 @@ export default function Home() {
         </div>
         <div className="mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
           <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
-            <Typography variant={"headline1"}>
-              Мы предлагаем чат с сохранением истории{" "}
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              Мы предлагаем
             </Typography>
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              чат с сохранением
+            </Typography>
+            <Typography variant={"headline1"} className=" whitespace-nowrap">
+              истории{" "}
+            </Typography>
+
             <Typography variant={"bodyL"}>
               Вам не нужно переходить из мессенджера в мессенджер. Теперь
               чат прямо внутри приложения. Благодаря этому вы не теряете историю
@@ -164,8 +208,14 @@ export default function Home() {
         </div>
         <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
           <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
-            <Typography variant={"headline1"}>
-              Мы экономим ваше время{" "}
+            <Typography
+              variant={"headline1"}
+              className="-mb-6 whitespace-nowrap"
+            >
+              Мы экономим
+            </Typography>
+            <Typography variant={"headline1"} className=" whitespace-nowrap">
+              ваше время
             </Typography>
             <Typography variant={"bodyL"}>
               Портфолио и проекты создаются за пару кликов. Теперь вся

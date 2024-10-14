@@ -1,3 +1,4 @@
+import IconLogoFull from "@/shared/assets/icons/icon_logo_full.svg";
 import LogoInBoost from "@/shared/assets/icons/logo_in_boost.svg";
 import { Button } from "@/shared/ui/Button";
 import { Typography } from "@/shared/ui/Typography";
@@ -13,19 +14,21 @@ export const ContentOne = () => {
     <>
       {/* Header */}
       <div className="flex w-full items-center justify-center md:mb-[162px]">
-        <div className="flex items-stretch justify-start gap-[2px]">
-          <LogoInBoost />
+        <div className="flex h-[56px] items-center justify-start gap-[2px]">
+          <IconLogoFull />
+
+          {/* <LogoInBoost />
           <Typography className="self-center !text-center !text-[26px] !font-extrabold">
             In
             <span className="text-[26px] font-extrabold text-purple-500">
               BOOST
             </span>
-          </Typography>
+          </Typography> */}
         </div>
       </div>
       {/* Content_1 */}
       <div className="relative z-50 mx-auto md:h-[640px] md:w-[1120px]">
-        <div className="absolute right-0 top-64 z-0 h-[170px] w-[383px] md:-right-[124px] md:bottom-[65px] md:h-[339px] md:w-[765px]">
+        <div className="absolute right-0 top-64 z-0 h-[170px] w-[383px] md:-right-[64px] md:bottom-[65px] md:h-[339px] md:w-[765px]">
           <Image alt="cubes" src={"/tmp/cubes.png"} fill quality={100} />
         </div>
         <div className="-mx-6 flex flex-col items-stretch justify-start gap-[6px] pt-[69px] md:-mx-0 md:w-[789px]">

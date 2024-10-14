@@ -3,8 +3,9 @@ const nextConfig = {
   output: "standalone",
   images: {
     remotePatterns: [
-      { protocol: "https", pathname: "**", hostname: "eventy.kz" },
+      { protocol: "https", pathname: "**", hostname: "inboost.kz" },
     ],
+    domains: ["localhost"], // Add localhost to the domains array
   },
   logging: {
     fetches: {

@@ -23,7 +23,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           placeholder={placeholder}
           className={cn(
             "file:text-foreground border-[1px] border-[#1717191F] focus:border-bg-accent",
-            "placeholder:text-[#171719E0]",
+            "text-[15px] placeholder:font-medium placeholder:leading-[21px] placeholder:text-[#17171999] ",
             "flex h-[53px] w-full rounded-[24px] border bg-transparent",
             "px-[14px] py-[6px]",
             "text-sm shadow-sm transition-colors",

@@ -14,22 +14,22 @@ export const ContentFooter = () => {
     offset: ["start end", "end start"],
   });
 
-  const yDiv1 = useTransform(scrollYProgress, [0, 1], [-140, 400]);
-  const yDiv2 = useTransform(scrollYProgress, [0, 1], [0, -550]);
+  const yDiv1 = useTransform(scrollYProgress, [0, 1], [400, -540]);
+  const yDiv2 = useTransform(scrollYProgress, [0, 1], [-550, 800]);
 
   return (
     <>
       <div
         ref={targetRef}
-        className="relative mx-auto mt-[120px] flex flex-col items-stretch justify-start gap-4 rounded-[32px] bg-bg-primary-inverse py-8 md:h-[488px] md:w-[1120px] md:flex-row md:gap-0 md:py-[79px] md:pl-[83px] md:pr-[134px]"
+        className="relative mx-auto mt-[120px] flex flex-col items-stretch justify-start gap-4 overflow-hidden rounded-[32px] bg-bg-primary-inverse py-8 md:h-[488px] md:w-[1120px] md:flex-row md:gap-0 md:py-[79px] md:pl-[83px] md:pr-[134px]"
       >
         <motion.div
-          className="absolute left-10 top-[50%] h-[30px] w-[30px] rotate-12 rounded-[8px] bg-violet-main opacity-70 md:top-[30%]"
-          style={{ y: yDiv1 }}
+          className="absolute left-10 top-[50%] h-[30px] w-[30px] rotate-12 rounded-[8px]  bg-violet-main opacity-70 md:top-[30%]"
+          style={{ y: yDiv1, rotate: 110 }}
         />
         <motion.div
           className="absolute bottom-[24%] left-[10%] h-10 w-10 -rotate-[30deg] rounded-[6px] bg-bg-accent-yellow-secondary opacity-70 md:left-[35%]"
-          style={{ y: yDiv2 }}
+          style={{ y: yDiv2, rotate: 45 }}
         />
 
         <div className="flex flex-col items-center justify-evenly gap-4 md:w-[662px] md:items-stretch md:gap-0 ">
