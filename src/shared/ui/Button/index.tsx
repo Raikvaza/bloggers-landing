@@ -3,7 +3,12 @@ import { cn } from "@/shared/utils/common";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import Image from "next/image";
-import { forwardRef, HTMLAttributes, ReactNode } from "react";
+import {
+  ButtonHTMLAttributes,
+  forwardRef,
+  HTMLAttributes,
+  ReactNode,
+} from "react";
 
 export const customButtonVariants = cva(
   "flex items-center leading-[140%] px-8 py-4 h-[62px] rounded-[32px] justify-center",
@@ -35,12 +40,13 @@ export const customButtonVariants = cva(
 );
 
 export interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement>,
+  extends Omit<HTMLAttributes<HTMLButtonElement>, "type">,
     VariantProps<typeof customButtonVariants> {
   isLoading?: boolean;
   asChild?: boolean;
   disabled?: boolean;
   prefixIcon?: ReactNode;
+  type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -53,6 +59,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       asChild = false,
       disabled = false,
       prefixIcon,
+      type = "button",
       ...props
     },
     ref,
@@ -64,21 +71,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(customButtonVariants({ variant, disabled }), className)}
         ref={ref}
         disabled={disabled}
+        {...(Comp === "button" ? { type } : {})}
         {...props}
       >
         {isLoading ? (
-          <>
-            <div className="mx-auto">
-              <Image
-                quality={100}
-                className="animate-spin"
-                alt="loader"
-                src={"/tmp/loader.png"}
-                width={32}
-                height={32}
-              />
-            </div>
-          </>
+          <div className="mx-auto">
+            <Image
+              quality={100}
+              className="animate-spin"
+              alt="loader"
+              src={"/tmp/loader.png"}
+              width={32}
+              height={32}
+            />
+          </div>
         ) : (
           <>
             {<span className="mr-2">{prefixIcon}</span>}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 
 import "./globals.css";
+import { Provider } from "./provider";
 
 const redHatDisplay = Red_Hat_Display({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
           "flex min-h-[100dvh] flex-col antialiased",
         )}
       >
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

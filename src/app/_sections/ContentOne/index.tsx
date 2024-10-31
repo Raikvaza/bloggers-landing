@@ -4,6 +4,7 @@ import { Button } from "@/shared/ui/Button";
 import { Typography } from "@/shared/ui/Typography";
 import { RegisterForm } from "@/widgets/RegisterForm";
 import { SettingsCard } from "@/widgets/SettingsCard";
+import { WidgetRegistrationSuccessful } from "@/widgets/WidgetRegistrationSuccessful";
 import Image from "next/image";
 import React from "react";
 
@@ -62,6 +63,7 @@ export const ContentOne = () => {
           аните свой бизнес — просто размещайте свои проекты и визитки в нашем
           приложении, а дальше мы сделаем все за вас
         </Typography>
+
         <RegisterForm>
           <Button variant={"secondary"} className="mt-10 w-full md:w-[223px]">
             Узнать больше

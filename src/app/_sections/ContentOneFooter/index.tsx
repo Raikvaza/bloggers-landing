@@ -62,7 +62,7 @@ export const ContentOneFooter = () => {
       <Image
         src={"http://localhost:3000/tmp/insta_rotated.png"}
         width={100}
-        className="absolute bottom-[149px] right-[118px] object-cover"
+        className="absolute bottom-[20px] right-[30px] object-cover md:bottom-[149px] md:right-[118px]"
         height={100}
         alt=""
       ></Image>

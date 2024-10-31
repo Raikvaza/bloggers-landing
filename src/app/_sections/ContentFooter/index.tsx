@@ -64,7 +64,7 @@ export const ContentFooter = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-stretch justify-between">
+        {/* <div className="flex flex-col items-stretch justify-between">
           <div className="relative h-[180px] w-[180px] self-center rounded-[32px] md:h-[241px] md:w-[241px]">
             <Image
               src={"/tmp/qr_code.png"}
@@ -77,7 +77,7 @@ export const ContentFooter = () => {
           <div className="h-[80px] w-[280px] self-center">
             <IconAppstore />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="-mx-8 mt-10 flex w-[100dvw] flex-col items-center justify-center gap-4 pb-10 md:mx-auto md:mt-[131px] md:h-[120px] md:w-[1120px] md:flex-row md:justify-start md:gap-0">

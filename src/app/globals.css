@@ -14,3 +14,6 @@
 .slick-dots li {
   margin: 0 1px !important;
 }
+.animate-spin {
+  animation: spin infinite 3s linear; /* Change the duration and timing function as needed */
+}

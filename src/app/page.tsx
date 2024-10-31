@@ -1,7 +1,9 @@
 "use client";
 
+import { DialogSuccessProvider } from "@/features/application/model/dialogSuccessContext";
 import { Typography } from "@/shared/ui/Typography";
 import { BloggerCard } from "@/widgets/BloggerCard";
+import { WidgetRegistrationSuccessful } from "@/widgets/WidgetRegistrationSuccessful";
 import {
   motion,
   useMotionValueEvent,
@@ -50,221 +52,225 @@ export default function Home() {
   );
 
   return (
-    <div className="relative min-h-screen bg-white p-8 pb-0 text-[#171719]">
-      <ContentOne />
-      {/* Parallax content */}
-      <div
-        className="relative mx-auto mt-[120px] flex h-[3406px] w-full flex-col items-stretch justify-start md:w-[1120px]"
-        ref={targetRef}
-      >
-        {/* Parallax Image */}
-        <motion.div
-          className="absolute right-0 hidden h-[539px] w-[563px] md:block"
-          style={{
-            y: yPosition,
-            transform: "translateX( -50%)",
-            willChange: "transform",
-          }}
+    <DialogSuccessProvider>
+      <WidgetRegistrationSuccessful />
+      <div className="relative min-h-screen bg-white p-8 pb-0 text-[#171719]">
+        <ContentOne />
+        {/* Parallax content */}
+        <div
+          className="relative mx-auto mt-[120px] flex h-[3406px] w-full flex-col items-stretch justify-start md:w-[1120px]"
+          ref={targetRef}
         >
-          <Image
-            src={"/tmp/parallax_cubes.png"}
-            alt="parallax cubes"
-            height={539}
-            width={563}
-          />
-        </motion.div>
-
-        <div className="self-center rounded-[26px] bg-bg-accent-subduet-active px-6 pb-2 pt-1">
-          <Typography variant={"headline3"}>Почему мы?</Typography>
-        </div>
-
-        {/* Repeated sections */}
-        <div className="mt-3 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[80px] md:h-[680px] md:flex-row md:gap-[157px]">
-          <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              Мы используем
-            </Typography>
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              искусственный
-            </Typography>
-
-            <Typography variant={"headline1"} className=" whitespace-nowrap">
-              интеллект
-            </Typography>
-
-            <Typography variant={"bodyL"}>
-              Рекламодатели или блогеры, предложенные в вашем профиле, будут
-              подходить вам с точностью до 99%. Вам останется только выбрать
-              подходящего кандидата и начать сотрудничество с помощью всего
-              одной кнопки.
-            </Typography>
-          </div>
-          <div
-            className={"relative h-[653px] w-[302px] rounded-[36px] bg-white"}
+          {/* Parallax Image */}
+          <motion.div
+            className="absolute right-0 hidden h-[539px] w-[563px] md:block"
+            style={{
+              y: yPosition,
+              transform: "translateX( -50%)",
+              willChange: "transform",
+            }}
           >
             <Image
-              className="z-40"
-              src={"/tmp/main_screen.png"}
-              alt="main screen"
-              fill
+              src={"/tmp/parallax_cubes.png"}
+              alt="parallax cubes"
+              height={539}
+              width={563}
             />
-          </div>
-        </div>
+          </motion.div>
 
-        <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
-          <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              Мы способствуем
-            </Typography>
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              прозрачности
-            </Typography>
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            ></Typography>
-            <Typography variant={"headline1"} className=" whitespace-nowrap">
-              сделки
-            </Typography>
-
-            <Typography variant={"bodyL"}>
-              В нашем приложении вы можете заключить договор между сторонами и
-              регулировать сделку с помощью официального документа
-            </Typography>
+          <div className="self-center rounded-[26px] bg-bg-accent-subduet-active px-6 pb-2 pt-1">
+            <Typography variant={"headline3"}>Почему мы?</Typography>
           </div>
-          <div className="relative flex h-[366.5px] w-full md:h-[733px]">
+
+          {/* Repeated sections */}
+          <div className="mt-3 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[80px] md:h-[680px] md:flex-row md:gap-[157px]">
+            <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                Мы используем
+              </Typography>
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                искусственный
+              </Typography>
+
+              <Typography variant={"headline1"} className=" whitespace-nowrap">
+                интеллект
+              </Typography>
+
+              <Typography variant={"bodyL"}>
+                Рекламодатели или блогеры, предложенные в вашем профиле, будут
+                подходить вам с точностью до 99%. Вам останется только выбрать
+                подходящего кандидата и начать сотрудничество с помощью всего
+                одной кнопки.
+              </Typography>
+            </div>
             <div
-              className={
-                "absolute right-[92px] h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-[184px] md:h-[653px] md:w-[302px]"
-              }
+              className={"relative h-[653px] w-[302px] rounded-[36px] bg-white"}
             >
               <Image
                 className="z-40"
-                src={"/tmp/project_screen_1.png"}
-                alt="main screen"
-                fill
-              />
-            </div>
-            <div
-              className={
-                "absolute right-1 top-10 h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-2 md:top-20 md:h-[653px] md:w-[302px]"
-              }
-            >
-              <Image
-                className="z-30"
-                src={"/tmp/project_screen_2.png"}
+                src={"/tmp/main_screen.png"}
                 alt="main screen"
                 fill
               />
             </div>
           </div>
-        </div>
-        <div className="mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
-          <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              Мы предлагаем
-            </Typography>
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              чат с сохранением
-            </Typography>
-            <Typography variant={"headline1"} className=" whitespace-nowrap">
-              истории{" "}
-            </Typography>
 
-            <Typography variant={"bodyL"}>
-              Вам не нужно переходить из мессенджера в мессенджер. Теперь
-              чат прямо внутри приложения. Благодаря этому вы не теряете историю
-              сделки с партнёром и всегда можете найти нужную информацию
-            </Typography>
+          <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
+            <div className="flex w-full flex-col items-stretch justify-center gap-6 text-center md:w-[540px] md:text-start">
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                Мы способствуем
+              </Typography>
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                прозрачности
+              </Typography>
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              ></Typography>
+              <Typography variant={"headline1"} className=" whitespace-nowrap">
+                сделки
+              </Typography>
+
+              <Typography variant={"bodyL"}>
+                В нашем приложении вы можете заключить договор между сторонами и
+                регулировать сделку с помощью официального документа
+              </Typography>
+            </div>
+            <div className="relative flex h-[366.5px] w-full md:h-[733px]">
+              <div
+                className={
+                  "absolute right-[92px] h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-[184px] md:h-[653px] md:w-[302px]"
+                }
+              >
+                <Image
+                  className="z-40"
+                  src={"/tmp/project_screen_1.png"}
+                  alt="main screen"
+                  fill
+                />
+              </div>
+              <div
+                className={
+                  "absolute right-1 top-10 h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-2 md:top-20 md:h-[653px] md:w-[302px]"
+                }
+              >
+                <Image
+                  className="z-30"
+                  src={"/tmp/project_screen_2.png"}
+                  alt="main screen"
+                  fill
+                />
+              </div>
+            </div>
           </div>
-          <div
-            className={"relative h-[653px] w-[302px] rounded-[36px] bg-white"}
-          >
-            <Image
-              className="z-40"
-              src={"/tmp/project_screen_3.png"}
-              alt="main screen"
-              fill
-            />
-          </div>
-        </div>
-        <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
-          <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
-            <Typography
-              variant={"headline1"}
-              className="-mb-6 whitespace-nowrap"
-            >
-              Мы экономим
-            </Typography>
-            <Typography variant={"headline1"} className=" whitespace-nowrap">
-              ваше время
-            </Typography>
-            <Typography variant={"bodyL"}>
-              Портфолио и проекты создаются за пару кликов. Теперь вся
-              необходимая информация, включая статистику блогеров, в одном
-              приложении. Вы можете редактировать свой профиль, добавлять новые
-              проекты и соцсети
-            </Typography>
-          </div>
-          <div className="relative flex h-[366.5px] w-full md:h-[733px]">
+          <div className="mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
+            <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                Мы предлагаем
+              </Typography>
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                чат с сохранением
+              </Typography>
+              <Typography variant={"headline1"} className=" whitespace-nowrap">
+                истории{" "}
+              </Typography>
+
+              <Typography variant={"bodyL"}>
+                Вам не нужно переходить из мессенджера в мессенджер. Теперь
+                чат прямо внутри приложения. Благодаря этому вы не теряете
+                историю сделки с партнёром и всегда можете найти нужную
+                информацию
+              </Typography>
+            </div>
             <div
-              className={
-                "absolute right-[92px] h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-[184px] md:h-[653px] md:w-[302px]"
-              }
+              className={"relative h-[653px] w-[302px] rounded-[36px] bg-white"}
             >
               <Image
                 className="z-40"
-                src={"/tmp/project_screen_2.png"}
-                alt="main screen"
-                fill
-              />
-            </div>
-            <div
-              className={
-                "absolute right-1 top-10 h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-2 md:top-20 md:h-[653px] md:w-[302px]"
-              }
-            >
-              <Image
-                className="z-30"
-                src={"/tmp/project_screen_5.png"}
+                src={"/tmp/project_screen_3.png"}
                 alt="main screen"
                 fill
               />
             </div>
           </div>
+          <div className="relative mt-12 flex w-full flex-col items-stretch justify-start gap-14 md:mt-[200px] md:h-[680px] md:flex-row md:gap-[157px]">
+            <div className="flex w-full flex-col items-stretch justify-center gap-6 md:w-[540px]">
+              <Typography
+                variant={"headline1"}
+                className="-mb-6 whitespace-nowrap"
+              >
+                Мы экономим
+              </Typography>
+              <Typography variant={"headline1"} className=" whitespace-nowrap">
+                ваше время
+              </Typography>
+              <Typography variant={"bodyL"}>
+                Портфолио и проекты создаются за пару кликов. Теперь вся
+                необходимая информация, включая статистику блогеров, в одном
+                приложении. Вы можете редактировать свой профиль, добавлять
+                новые проекты и соцсети
+              </Typography>
+            </div>
+            <div className="relative flex h-[366.5px] w-full md:h-[733px]">
+              <div
+                className={
+                  "absolute right-[92px] h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-[184px] md:h-[653px] md:w-[302px]"
+                }
+              >
+                <Image
+                  className="z-40"
+                  src={"/tmp/project_screen_2.png"}
+                  alt="main screen"
+                  fill
+                />
+              </div>
+              <div
+                className={
+                  "absolute right-1 top-10 h-[326.5px] w-[151px] rounded-[36px] bg-white md:right-2 md:top-20 md:h-[653px] md:w-[302px]"
+                }
+              >
+                <Image
+                  className="z-30"
+                  src={"/tmp/project_screen_5.png"}
+                  alt="main screen"
+                  fill
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* bloggers card */}
-      <div className="mx-auto mt-[180px] flex flex-col items-stretch justify-between gap-4 sm:mt-[140px] md:mt-[120px] md:h-[658px] md:w-[1120px] md:gap-0">
-        <div className="self-center rounded-[26px] bg-bg-accent-subduet-active px-6 pb-2 pt-1">
-          <Typography variant={"headline3"}>С нами сотрудничают</Typography>
+        {/* bloggers card */}
+        <div className="mx-auto mt-[180px] flex flex-col items-stretch justify-between gap-4 sm:mt-[140px] md:mt-[120px] md:h-[658px] md:w-[1120px] md:gap-0">
+          <div className="self-center rounded-[26px] bg-bg-accent-subduet-active px-6 pb-2 pt-1">
+            <Typography variant={"headline3"}>С нами сотрудничают</Typography>
+          </div>
+          <div className="z-50 flex w-full flex-col items-center justify-start gap-5 md:flex-row md:items-stretch">
+            <BloggerCard color="bg-lilac-600" />
+            <BloggerCard color="bg-teal-500" />
+            <BloggerCard color="bg-bg-accent-yellow" />
+          </div>
         </div>
-        <div className="z-50 flex w-full flex-col items-center justify-start gap-5 md:flex-row md:items-stretch">
-          <BloggerCard color="bg-lilac-600" />
-          <BloggerCard color="bg-teal-500" />
-          <BloggerCard color="bg-bg-accent-yellow" />
-        </div>
+        <ContentFooter />
       </div>
-      <ContentFooter />
-    </div>
+    </DialogSuccessProvider>
   );
 }
