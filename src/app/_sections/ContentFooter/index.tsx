@@ -1,25 +1,23 @@
 "use client";
 
-import IconAppstore from "@/shared/assets/icons/icon_appstore.svg";
+// import IconAppstore from "@/shared/assets/icons/icon_appstore.svg";
 import { Typography } from "@/shared/ui/Typography";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import React, { useRef } from "react";
 
 export const ContentFooter = () => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  // const targetRef = useRef<HTMLDivElement | null>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start end", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: targetRef,
+  //   offset: ["start end", "end start"],
+  // });
 
-  const yDiv1 = useTransform(scrollYProgress, [0, 1], [400, -540]);
-  const yDiv2 = useTransform(scrollYProgress, [0, 1], [-550, 800]);
+  // const yDiv1 = useTransform(scrollYProgress, [0, 1], [400, -540]);
+  // const yDiv2 = useTransform(scrollYProgress, [0, 1], [-550, 800]);
 
   return (
     <>
-      <div
+      {/* <div
         ref={targetRef}
         className="relative mx-auto mt-[120px] flex flex-col items-stretch justify-start gap-4 overflow-hidden rounded-[32px] bg-bg-primary-inverse py-8 md:h-[488px] md:w-[1120px] md:flex-row md:gap-0 md:py-[79px] md:pl-[83px] md:pr-[134px]"
       >
@@ -63,8 +61,9 @@ export const ContentFooter = () => {
             </Typography>
           </div>
         </div>
+      </div> */}
 
-        {/* <div className="flex flex-col items-stretch justify-between">
+      {/* <div className="flex flex-col items-stretch justify-between">
           <div className="relative h-[180px] w-[180px] self-center rounded-[32px] md:h-[241px] md:w-[241px]">
             <Image
               src={"/tmp/qr_code.png"}
@@ -77,8 +76,7 @@ export const ContentFooter = () => {
           <div className="h-[80px] w-[280px] self-center">
             <IconAppstore />
           </div>
-        </div> */}
-      </div>
+          </div> */}
 
       <div className="-mx-8 mt-10 flex w-[100dvw] flex-col items-center justify-center gap-4 pb-10 md:mx-auto md:mt-[131px] md:h-[120px] md:w-[1120px] md:flex-row md:justify-start md:gap-0">
         <div className="flex w-full items-center justify-between px-8">
