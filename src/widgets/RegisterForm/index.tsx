@@ -28,6 +28,9 @@ interface RegisterFormProps {
 
 // Updated schema with required validation
 const registerFormSchema = z.object({
+  name: z
+    .string({ required_error: "Введите, пожалуйста, ваше имя" })
+    .nonempty({ message: "Введите, пожалуйста, ваше имя" }),
   login: z
     .string({ required_error: "Введите, пожалуйста, логин из соцсетей" })
     .nonempty({ message: "Введите, пожалуйста, логин из соцсетей" }),
@@ -117,6 +120,12 @@ export const RegisterForm = ({
             onSubmit={handleSubmit(onSubmit)}
             className="flex w-full flex-col items-stretch justify-start gap-4"
           >
+            <Input
+              label="Ваше имя"
+              placeholder="Алия Муратовна"
+              {...register("name")}
+              error={errors.name?.message}
+            />
             <Input
               label="Аккаунт в Instagram или TikTok"
               placeholder="@username"

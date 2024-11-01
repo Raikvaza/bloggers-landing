@@ -65,6 +65,7 @@ export const ContentOneFooter = () => {
         className="absolute bottom-[20px] right-[30px] object-cover md:bottom-[149px] md:right-[118px]"
         height={100}
         alt=""
+        quality={100}
       ></Image>
     </div>
   );
