@@ -16,6 +16,7 @@ type Props = {
 
 export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
 
   const handleFlip = () => {
     if (isMobile) {
@@ -86,14 +87,19 @@ export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
               </Typography>
             </div>
           </div>
-          <RegisterForm>
-            <div className="flex w-full items-center justify-between">
-              <Typography variant={"bodyM"} className="text-bg-primary">
-                Зарегистрироваться
-              </Typography>
-              <ChevronRightButton />
-            </div>
-          </RegisterForm>
+          <RegisterForm
+            isFormDialogOpen={isFormDialogOpen}
+            setIsFormDialogOpen={setIsFormDialogOpen}
+          />
+          <div
+            onClick={() => setIsFormDialogOpen(true)}
+            className="flex w-full items-center justify-between"
+          >
+            <Typography variant={"bodyM"} className="text-bg-primary">
+              Зарегистрироваться
+            </Typography>
+            <ChevronRightButton />
+          </div>
         </motion.div>
       </motion.div>
     </motion.div>
