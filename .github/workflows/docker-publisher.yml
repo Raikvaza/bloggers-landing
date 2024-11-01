@@ -34,3 +34,19 @@ jobs:
           docker tag "eventy/blog-landing:$(echo ${{ steps.meta.outputs.version }} | cut -c 2-)" cr.yandexcloud.kz/crksp0ersei7pfkuvqsc/blog-landing:latest
           docker push cr.yandexcloud.kz/crksp0ersei7pfkuvqsc/blog-landing:$(echo ${{ steps.meta.outputs.version }} | cut -c 2-)
           docker push cr.yandexcloud.kz/crksp0ersei7pfkuvqsc/blog-landing:latest
+
+  deploy:
+    name: deploy-backend
+    runs-on: ubuntu-latest
+    needs: push_to_registry
+    steps:
+      - name: deploy-to-yc-server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.YC_SSH_KEY_PROD }}
+          REMOTE_HOST: ${{ secrets.YC_HOST_PROD }}
+          REMOTE_USER: ${{ secrets.YC_USER_PROD }}
+          SCRIPT_AFTER: |
+            docker pull cr.yandexcloud.kz/crksp0ersei7pfkuvqsc/blogback:latest
+            cd inboost-app
+            docker-compose up -d --build backend
