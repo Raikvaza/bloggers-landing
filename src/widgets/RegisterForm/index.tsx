@@ -8,7 +8,6 @@ import {
   DialogClose,
   DialogContent,
   DialogHeader,
-  DialogTrigger,
 } from "@/shared/ui/Dialog";
 import { Input } from "@/shared/ui/Input";
 import { Typography } from "@/shared/ui/Typography";
@@ -16,17 +15,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
-import React, { ReactNode, useState } from "react";
+import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { WidgetRegistrationSuccessful } from "../WidgetRegistrationSuccessful";
 
-type Props = {
-  children: ReactNode;
-};
+interface RegisterFormProps {
+  isFormDialogOpen: boolean;
+  setIsFormDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-// Updated schema with .min(1) for required validation
+// Updated schema with required validation
 const registerFormSchema = z.object({
   login: z
     .string({ required_error: "Введите, пожалуйста, логин из соцсетей" })
@@ -36,9 +36,11 @@ const registerFormSchema = z.object({
 
 type RegisterFormData = z.infer<typeof registerFormSchema>;
 
-export const RegisterForm = ({ children }: Props) => {
+export const RegisterForm = ({
+  isFormDialogOpen,
+  setIsFormDialogOpen,
+}: RegisterFormProps) => {
   const { setOpen } = useDialogSuccess();
-  const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
 
   const {
     register,
@@ -64,6 +66,7 @@ export const RegisterForm = ({ children }: Props) => {
     },
     onError: (error: any) => {
       console.error("Error submitting form:", error.message);
+      setIsFormDialogOpen(false);
     },
     onSuccess: () => {
       setOpen(true);
@@ -75,13 +78,12 @@ export const RegisterForm = ({ children }: Props) => {
   const onSubmit = (data: RegisterFormData) => {
     mutation.mutate(data);
   };
-
+  const handleOpenChange = (open: boolean) => {
+    setIsFormDialogOpen(open);
+  };
   return (
     <>
-      <Dialog open={isFormDialogOpen} onOpenChange={setIsFormDialogOpen}>
-        <DialogTrigger asChild>
-          <div onClick={() => setIsFormDialogOpen(true)}>{children}</div>
-        </DialogTrigger>
+      <Dialog open={isFormDialogOpen} onOpenChange={handleOpenChange}>
         <DialogContent className="!z-[100] flex w-[98vw] flex-col gap-5 !rounded-[32px] bg-white pb-[80px] pt-20 md:w-[600px] md:p-20 md:pt-[92px]">
           <DialogClose className="absolute right-10 top-10 z-[100] h-8 w-8">
             <IconClose />
@@ -140,7 +142,6 @@ export const RegisterForm = ({ children }: Props) => {
                 variant={"secondary"}
                 className="w-full"
                 type="submit"
-                // disabled={!isValid || mutation.isPending}
               >
                 {mutation.isPending ? "Отправка..." : "Отправить"}
               </Button>
