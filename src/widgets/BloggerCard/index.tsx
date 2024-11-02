@@ -11,10 +11,26 @@ import ChevronRightButton from "../IconButtonChevronRIght";
 import { RegisterForm } from "../RegisterForm";
 
 type Props = {
+  frontTitle: string;
+  frontText: string;
+  backTitle: string;
+  backText: string[];
+  imageUrl: string;
+  imageHeight: number;
+  imageWidth: number;
   color?: string;
 };
 
-export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
+export const BloggerCard = ({
+  color = "bg-lilac-600",
+  backText,
+  backTitle,
+  imageHeight,
+  imageWidth,
+  frontText,
+  frontTitle,
+  imageUrl,
+}: Props) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isFormDialogOpen, setIsFormDialogOpen] = useState(false);
 
@@ -41,25 +57,28 @@ export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
         {/* Front Card */}
         <motion.div
           className={cn(
-            "absolute inset-0 flex h-full w-full flex-col items-start justify-between gap-4 rounded-2xl p-8 pb-0",
+            "absolute inset-0 flex h-full w-full flex-col items-start justify-between rounded-2xl p-8 pb-0",
             color ? color : "bg-lilac-600",
           )}
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="flex flex-col items-start justify-start gap-2">
-            <Typography variant={"headline3"}>Miriam Kautova</Typography>
+            <Typography variant={"headline3"}>{frontTitle}</Typography>
             <Typography variant={"bodyM"} className="pr-3">
-              Блогер с аудиторией более 100k подписчиков, которая пишет о
-              бизнесе
+              {frontText}
             </Typography>
           </div>
           <Image
-            src={"/tmp/blogger_card.png"}
+            src={imageUrl}
             alt="blogger card"
-            width={244}
-            height={388}
+            width={imageWidth ?? 244}
+            height={imageHeight ?? 388}
             quality={100}
             className="self-center"
+            style={{
+              minHeight: `${imageHeight}px`,
+              minWidth: `${imageWidth}px`,
+            }}
           />
         </motion.div>
 
@@ -70,21 +89,18 @@ export const BloggerCard = ({ color = "bg-lilac-600" }: Props) => {
         >
           <div className="flex flex-col items-stretch justify-start gap-6">
             <Typography variant={"headline3"} className="text-white">
-              Отличное приложение!
+              {backTitle}
             </Typography>
             <div className="flex flex-col items-stretch justify-start gap-4">
-              <Typography variant={"bodyM"} className="text-text-tertiary">
-                Нам, блогерам, важно найти рекламодателей со схожими ценностями.
-              </Typography>
-
-              <Typography variant={"bodyM"} className="text-text-tertiary">
-                Это оказалось сделать легко в приложении InBOOST, разработанным
-                нашими казахстанскими специалистами.
-              </Typography>
-
-              <Typography variant={"bodyM"} className="text-text-tertiary">
-                Я рада, что теперь в Казахстане есть такой продукт.
-              </Typography>
+              {backText.map((text, index) => (
+                <Typography
+                  key={index}
+                  variant={"bodyM"}
+                  className="text-text-tertiary"
+                >
+                  {text}
+                </Typography>
+              ))}
             </div>
           </div>
           <RegisterForm

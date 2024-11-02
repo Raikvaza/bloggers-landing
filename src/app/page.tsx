@@ -264,9 +264,48 @@ export default function Home() {
             <Typography variant={"headline3"}>С нами сотрудничают</Typography>
           </div>
           <div className="z-50 flex w-full flex-col items-center justify-start gap-5 md:flex-row md:items-stretch">
-            <BloggerCard color="bg-lilac-600" />
-            <BloggerCard color="bg-teal-500" />
-            <BloggerCard color="bg-bg-accent-yellow" />
+            <BloggerCard
+              frontText="Блогер с аудиторией 13К подписчиков в Instagram, тренер по пилатесу, студент Назарбаев Университета, жена и мама"
+              frontTitle="Gulsezim"
+              backTitle="@sezaamankeldi"
+              backText={[
+                "Блог Гульсезим для тех, кто заботится о своем физическом и ментальном здоровье, а также интересуется бьюти-сферой. ",
+                "Тренер по пилатесу, студент Назарбаев Университета, жена и мама.",
+                "Мотивирует на бережное отношение к себе",
+              ]}
+              imageUrl="/tmp/Гульсезим.png"
+              color="bg-lilac-600"
+              imageHeight={375}
+              imageWidth={300}
+            />
+            <BloggerCard
+              frontTitle="Asel"
+              imageHeight={313}
+              imageWidth={208}
+              frontText="Блогер с аудиторией 9К подписчиков в Instagram, увлеченных темой красоты и ухода за кожей"
+              backText={[
+                "Блог Асель помогает пробудить настоящую красоту через правильный уход. ",
+                "Замужем, ведет блог с особым вниманием к деталям, разбирается в составах косметики и делится проверенными советами и рекомендациями по уходу за собой.",
+                "Мотивирует на регулярный и качественный уход за кожей",
+              ]}
+              imageUrl="/tmp/Асель.png"
+              color="bg-teal-500"
+              backTitle="@asselyaomarova"
+            />
+            <BloggerCard
+              backTitle="@tdd.66"
+              imageHeight={396}
+              imageWidth={340}
+              frontText="Блогер с аудиторией 36K в TikTok и 8K в Instagram о бьюти-сфере и стиле, с трансляцией лайфстайла и ярких моментов жизни"
+              frontTitle="Dayana"
+              backText={[
+                "Блог Даяны для тех, кто увлечён бьюти-сферой, смелым стилем и яркими моментами жизни. ",
+                "Её влоги, обзоры, трендовые видео и рубрики GRWM вдохновляют на самовыражение и индивидуальность.",
+                "Подписчики находят в ней не просто блогера, но и источник ежедневного вдохновения",
+              ]}
+              imageUrl="/tmp/Даяна.png"
+              color="bg-bg-accent-yellow"
+            />
           </div>
         </div>
         <ContentFooter />
