@@ -122,7 +122,7 @@ export const RegisterForm = ({
           >
             <Input
               label="Ваше имя"
-              placeholder="Алия Муратовна"
+              placeholder="Алия"
               {...register("name")}
               error={errors.name?.message}
             />
