@@ -2,6 +2,7 @@
 
 // import IconAppstore from "@/shared/assets/icons/icon_appstore.svg";
 import { Typography } from "@/shared/ui/Typography";
+import Link from "next/link";
 import React, { useRef } from "react";
 
 export const ContentFooter = () => {
@@ -90,16 +91,24 @@ export const ContentFooter = () => {
             variant={"caption2"}
             className="whitespace-nowrap md:ml-[163px]"
           >
-            +7 700 000 99 00
+            +7 778 000 18 80
           </Typography>
         </div>
         <Typography variant={"caption2"} className="md:ml-[110px]">
           inboost@kz
         </Typography>
         <div className="flex items-center justify-start gap-16 md:ml-[79px]">
-          <Typography variant={"bodyL"}>Instagram</Typography>
+          <Link
+            href={
+              "https://www.instagram.com/inboost.kz/profilecard/?igsh=MWtjZ29sd2lnZXRpbw=="
+            }
+          >
+            <Typography variant={"bodyL"}>Instagram</Typography>
+          </Link>
           <Typography variant={"bodyL"}>Telegram</Typography>
-          <Typography variant={"bodyL"}>Whatsapp</Typography>
+          <Link href={"https://wa.me/77780001880"}>
+            <Typography variant={"bodyL"}>Whatsapp</Typography>
+          </Link>
         </div>
       </div>
     </>
