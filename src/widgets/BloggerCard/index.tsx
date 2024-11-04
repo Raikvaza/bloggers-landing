@@ -57,7 +57,7 @@ export const BloggerCard = ({
         {/* Front Card */}
         <motion.div
           className={cn(
-            "absolute inset-0 flex h-full w-full flex-col items-start justify-between rounded-2xl p-8 pb-0",
+            "absolute inset-0 flex h-full w-full flex-col items-start justify-between overflow-hidden rounded-2xl p-8 pb-0",
             color ? color : "bg-lilac-600",
           )}
           style={{ backfaceVisibility: "hidden" }}
@@ -112,7 +112,7 @@ export const BloggerCard = ({
             className="flex w-full items-center justify-between"
           >
             <Typography variant={"bodyM"} className="text-bg-primary">
-              Зарегистрироваться
+              Узнать больше
             </Typography>
             <ChevronRightButton />
           </div>
